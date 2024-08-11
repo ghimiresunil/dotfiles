@@ -1,4 +1,2 @@
-require('config.options');
-require('config.keymaps');
-require('config.autocmds');
-require('config.lazy');
+require("linus.core")
+require("linus.lazy")
