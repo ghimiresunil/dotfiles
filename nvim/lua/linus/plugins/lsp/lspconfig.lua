@@ -8,13 +8,13 @@ return {
   },
   config = function()
     -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
+    local lspconfig = require "lspconfig"
 
     -- import mason_lspconfig plugin
-    local mason_lspconfig = require("mason-lspconfig")
+    local mason_lspconfig = require "mason-lspconfig"
 
     -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
     local keymap = vim.keymap -- for conciseness
 
@@ -78,23 +78,22 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup_handlers {
       -- default handler for installed servers
       function(server_name)
-        lspconfig[server_name].setup({
+        lspconfig[server_name].setup {
           capabilities = capabilities,
-        })
+        }
       end,
       ["pyright"] = function()
         -- configure pyright for Python
-        lspconfig["pyright"].setup({
+        lspconfig["pyright"].setup {
           capabilities = capabilities,
           on_attach = function(client, bufnr)
             -- Additional setup specific to pyright can go here if needed
           end,
-        })
+        }
       end,
-    })
+    }
   end,
 }
-

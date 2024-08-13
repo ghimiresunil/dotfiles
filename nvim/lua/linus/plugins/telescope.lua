@@ -8,13 +8,13 @@ return {
     "folke/todo-comments.nvim",
   },
   config = function()
-    local telescope = require("telescope")
-    local actions = require("telescope.actions")
+    local telescope = require "telescope"
+    local actions = require "telescope.actions"
 
-    telescope.setup({
+    telescope.setup {
       defaults = {
         path_display = { "smart" },
- 	file_ignore_patterns = { "venv", "%.venv" },
+        -- file_ignore_patterns = { "venv", "%.venv" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -23,9 +23,9 @@ return {
           },
         },
       },
-    })
+    }
 
-    telescope.load_extension("fzf")
+    telescope.load_extension "fzf"
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
