@@ -53,6 +53,10 @@ return {
     lualine.setup({
       options = {
         theme = my_lualine_theme,
+        disabled_filetypes = {
+          statusline = {"NVimTree_1"},
+          winbar = {"NVimTree_1"},
+        },
       },
       sections = {
         lualine_x = {

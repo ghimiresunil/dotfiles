@@ -4,6 +4,8 @@ vim.g.terminal_emulator = "konsole-Sunil"
 -- Set netrw list style
 vim.cmd "let g:netrw_liststyle = 3"
 
+-- vim.opt.statusline = "%f"
+
 local opt = vim.opt -- for conciseness
 
 -- line numbers
@@ -61,3 +63,21 @@ opt.showmatch = true
 
 -- set leader key
 vim.g.mapleader = " "
+
+-- Set cursor to white in both normal and insert modes
+vim.cmd [[
+  augroup CursorColor
+    autocmd!
+    autocmd InsertEnter * highlight CursorIM guifg=white guibg=NONE
+    autocmd InsertLeave * highlight Cursor guifg=white guibg=NONE
+  augroup END
+]]
+
+-- Set default cursor color to white in normal mode
+vim.cmd [[highlight Cursor guifg=white guibg=NONE]]
+
+-- Custom highlights for gitignored files and folders
+vim.cmd([[highlight NvimTreeGitIgnored guifg=#ffffff]])
+
+-- Optional: If you want to adjust the folder icons as well
+vim.cmd([[highlight NvimTreeFolderIcon guifg=#ffffff]])
