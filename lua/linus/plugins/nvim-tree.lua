@@ -33,7 +33,7 @@ return {
         side = "left",
         preserve_window_proportions = false,
         number = false,
-        relativenumber = false,
+        relativenumber = true,
         signcolumn = "yes",
         width = 30,
         float = {
@@ -280,7 +280,7 @@ return {
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
-    local api = require("nvim-tree.api")
+    local api = require "nvim-tree.api"
 
     keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
     keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
@@ -290,9 +290,8 @@ return {
     -- keymaps for opening files in splits
     keymap.set("n", "<leader>ev", api.node.open.vertical, { desc = "Open file in vertical split" })
     keymap.set("n", "<leader>eh", api.node.open.horizontal, { desc = "Open file in horizontal split" })
-    
+
     -- keymaps for opening files in tabs
     -- keymap.set("n", "<leader>et", api.node.open.tab, { desc = "Open file in new tab" })
-
   end,
 }

@@ -10,7 +10,7 @@ local opt = vim.opt -- for conciseness
 
 -- line numbers
 opt.number = true -- shows absolute line number
-opt.relativenumber = false -- show relative line numbers
+opt.relativenumber = true -- show relative line numbers
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -77,7 +77,8 @@ vim.cmd [[
 vim.cmd [[highlight Cursor guifg=white guibg=NONE]]
 
 -- Custom highlights for gitignored files and folders
-vim.cmd([[highlight NvimTreeGitIgnored guifg=#ffffff]])
+vim.cmd [[highlight NvimTreeGitIgnored guifg=#ffffff]]
 
 -- Optional: If you want to adjust the folder icons as well
-vim.cmd([[highlight NvimTreeFolderIcon guifg=#ffffff]])
+vim.cmd [[highlight NvimTreeFolderIcon guifg=#ffffff]]
+
